@@ -8,24 +8,24 @@ Functionality: A to-do list application where user can make a list either in the
 <div class="container">
     <div class="row">
         <div class="col col-lg-4 col-md-4 col-sm-4">
-            <img src="images/register.jpeg" width="30%" height="30%">
+            <img src="images/register.jpeg" width="30%" height="30%" style="disply:inline-block;">
         </div>
         <div class="col col-lg-4 col-lg-4 col-md-4 col-sm-4">
-            <img src="images/login.jpeg" width="30%" height="30%">
+            <img src="images/login.jpeg" width="30%" height="30%" style="disply:inline-block;">
         </div>
         <div class="col col-lg-4 col-lg-4 col-md-4 col-sm-4">
-            <img src="images/homepage.jpeg" width="30%" height="30%">
+            <img src="images/homepage.jpeg" width="30%" height="30%" style="disply:inline-block;">
         </div>
     </div>
     <div class="row">
         <div class="col col-lg-4 col-lg-4 col-md-4 col-sm-4">
-            <img src="images/customlist-with-validation.jpeg" width="30%" height="30%">
+            <img src="images/customlist-with-validation.jpeg" width="30%" height="30%" style="disply:inline-block;">
         </div>
         <div class="col col-lg-4 col-lg-4 col-md-4 col-sm-4">
-            <img src="images/InPlace edit.jpeg" width="30%" height="30%">
+            <img src="images/InPlace edit.jpeg" width="30%" height="30%" style="disply:inline-block;">
         </div>
         <div class="col col-lg-4 col-lg-4 col-md-4 col-sm-4">
-            <img src="images/all-lists.jpeg" width="30%" height="30%">
+            <img src="images/all-lists.jpeg" width="30%" height="30%" style="disply:inline-block;">
         </div>
     </div>
 </div>
