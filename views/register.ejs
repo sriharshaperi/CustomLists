@@ -1,0 +1,76 @@
+<%- include("partials/header") -%>
+
+<% if(typeof err !== 'undefined' &&  err !='') { %>
+
+    <div class="alert alert-danger alert-dismissible fade show register-form-alert" role="alert">
+        <strong><%= err %></strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+    <% } else if(success_message != '') { %>
+
+        <div class="alert alert-success alert-dismissible fade show register-form-alert" role="alert">
+            <strong><%= success_message %></strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+    <% } %>
+
+    <% if(typeof error != 'undefined' && error != '') { %>
+
+        <div class="alert alert-danger alert-dismissible fade show register-form-alert" role="alert">
+            <strong><%= error %></strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div> 
+
+    <% } %>
+
+    
+
+<div class="box box-register" id="box-register">
+    <div class="form-title">
+        <h1>Register</h1>
+    </div>
+    <div class="form-body">
+        <form action="/register" method="post" onsubmit="return validateRegisterForm(this)">
+            <div class="form-group">
+                <label id="register-firstname-label" for="password"></label><br>
+                <input type="text" name="firstname" id="firstname" class="form-control form-control-lg" placeholder="First Name">
+            </div>
+            <div class="form-group">
+                <label id="register-lastname-label" for="password"></label><br>
+                <input type="text" name="lastname" id="lastname" class="form-control form-control-lg" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <label id="register-email-label" for="password"></label><br>
+                <input type="email" name="email" id="email" class="form-control form-control-lg" placeholder="Email">
+            </div>
+            <div class="form-group">
+                <label id="register-username-register-label" for="password"></label><br>
+                <input type="text" name="username" id="username-register" class="form-control form-control-lg" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label id="register-password-register-label" for="password"></label><br>
+                <input type="password" name="password" id="password-register" class="form-control form-control-lg" placeholder="Password">
+            </div>
+            <div class="form-group">
+                <button type="submit" id="register-form-button" class="form-control form-control-lg btn btn-success btn-lg" onsubmit="validateRegisterForm()">Register</button>
+            </div>
+            <div class="form-group">
+                <p id="login-reference-link" class="form-reference">Already a member? Sign in <a href="/">here</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- <style>
+    body{background-color: ;}
+</style> -->
+
+<%- include("partials/footer") -%>

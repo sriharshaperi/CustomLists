@@ -1,0 +1,232 @@
+.container {
+  margin-bottom: 5%;
+}
+.box {
+  margin-top: 8%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px -5px rgba(0, 0, 0, 0.3);
+}
+
+.box-login {
+  background-color: whitesmoke;
+}
+
+.box-register {
+  background-color: oldlace;
+}
+
+.common-displayName {
+  padding-top: 2%;
+  text-align: center;
+}
+
+.common-description {
+  text-align: center;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 60%;
+}
+
+.common-wish {
+  text-align: center;
+}
+
+.lists-link {
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  color: darkcyan;
+  padding-bottom: 2%;
+}
+
+.lists-link:hover {
+  text-decoration: none;
+  color: darkslategrey;
+}
+
+.box-customList {
+  margin-top: 5%;
+}
+
+.display-card {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2%;
+  width: 95%;
+}
+
+.form-title {
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.form-body {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 95%;
+}
+
+form .form-control:focus {
+  border-color: #ced4da;
+  box-shadow: none;
+}
+
+.form-reference {
+  text-align: center;
+}
+
+.register-form-alert {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  margin-top: 2%;
+  margin-bottom: -5%;
+}
+
+strong {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+}
+
+.logout {
+  margin-top: 5%;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  padding-bottom: 2%;
+  color: paleturquoise;
+}
+
+.logout:hover {
+  color: darkslategray;
+}
+
+.redirect-link {
+  padding-top: 38%;
+}
+
+@media (max-width: 1500px) and (min-width: 1200px) {
+  .box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+  }
+  .register-form-alert {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+  }
+}
+
+/* media queries */
+
+@media (max-width: 1199px) and (min-width: 800px) {
+  .box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  }
+  .register-form-alert {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+  }
+}
+
+@media (max-width: 799px) and (min-width: 500px) {
+  .box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+  }
+  .register-form-alert {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+  }
+}
+
+@media (max-width: 499px) {
+  #box-login {
+    margin-top: 15%;
+  }
+
+  #box-register {
+    margin-top: 15%;
+  }
+
+  .box {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
+
+  .common-description {
+    text-align: center;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+  }
+
+  .titlebox {
+    margin-bottom: 5%;
+  }
+
+  .box-body {
+    margin-bottom: 5%;
+  }
+
+  .register-form-alert {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+  }
+
+  strong {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    text-align: center;
+  }
+
+  #currentTitle {
+    width: 35%;
+  }
+
+  #customListName::placeholder {
+    font-size: smaller;
+  }
+
+  #box-defaultList {
+    margin-bottom: 8%;
+  }
+
+  #logoutIcon {
+    font-size: 1.5rem;
+  }
+}

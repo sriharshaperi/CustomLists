@@ -1,0 +1,269 @@
+</div>
+</body>
+<script>
+
+   $(function () {
+
+        //dynamic display of label text for login form input fields 
+        $('#username').on('focus', () => {
+
+            $('#username').css('border-color', 'lightgrey')
+            $('body').append('<style>#username::placeholder{color:grey}</style>')
+            $('#login-username-label').html('Username')
+            $('#username').removeAttr('placeholder')
+        })
+
+        $('#username').on('blur', () => {
+            $('#login-username-label').html('')
+            $('#username').attr('placeholder', 'Username')
+        })
+
+        $('#password').on('focus', () => {
+            $('#password').css('border-color', 'lightgrey')
+            $('body').append('<style>#password::placeholder{color:grey}</style>')
+            $('#login-password-label').html('Password')
+            $('#password').removeAttr('placeholder')
+        })
+
+        $('#password').on('blur',   () => {
+            $('#login-password-label').html('')
+            $('#password').attr('placeholder', 'Password')
+        })
+
+
+        //dynamic display of label text for register form input fields 
+        $('#firstname').on('focus', () => {
+
+            $('#firstname').css('border-color', 'lightgrey')
+            $('body').append('<style>#firstname::placeholder{color:grey}</style>')
+            $('#register-firstname-label').html('First Name')
+            $('#firstname').removeAttr('placeholder')
+        })
+
+        $('#firstname').on('blur', () => {
+
+            $('#register-firstname-label').html('')
+            $('#firstname').attr('placeholder', 'First Name')
+        })
+
+        $('#lastname').on('focus', () => {
+
+            $('#lastname').css('border-color', 'lightgrey')
+            $('body').append('<style>#lastname::placeholder{color:grey}</style>')
+            $('#register-lastname-label').html('Last Name')
+            $('#lastname').removeAttr('placeholder')
+        })
+
+        $('#lastname').on('blur', () => {
+            $('#register-lastname-label').html('')
+            $('#lastname').attr('placeholder', 'Last Name')
+        })
+
+        $('#email').on('focus', () => {
+            $('#email').css('border-color', 'lightgrey')
+            $('body').append('<style>#email::placeholder{color:grey}</style>')
+            $('#register-email-label').html('Email')
+            $('#email').removeAttr('placeholder')
+        })
+
+        $('#email').on('blur', () => {
+            $('#register-email-label').html('')
+            $('#email').attr('placeholder', 'Email')
+        })
+
+        $('#username-register').on('focus', () => {
+            $('#username-register').css('border-color', 'lightgrey')
+            $('body').append('<style>#username-register::placeholder{color:grey}</style>')
+            $('#register-username-register-label').html('Username')
+            $('#username-register').removeAttr('placeholder')
+        })
+
+        $('#username-register').on('blur', () => {
+            $('#register-username-register-label').html('')
+            $('#username-register').attr('placeholder', 'Username')
+        })
+
+        $('#password-register').on('focus', () => {
+            $('#password-register').css('border-color', 'lightgrey')
+            $('body').append('<style>#password-register::placeholder{color:grey}</style>')
+            $('#register-password-register-label').html('Password')
+            $('#password-register').removeAttr('placeholder')
+        })
+
+        $('#password-register').on('blur', () => {
+            $('#register-password-register-label').html('')
+            $('#password-register').attr('placeholder', 'Password')
+        })
+
+        $('#addItem').on('focus', () => {
+            $('#addItem').css('border-color', 'lightgrey')
+            $('body').append('<style>#addItem::placeholder{color:grey}</style>')
+            $('#addItem').removeAttr('placeholder')
+        })
+
+        $('#addItem').on('blur', () => {
+            $('#addItem').attr('placeholder', 'Add Something')
+        })
+
+        $(document).click(() => {
+            $('body').append('<style>#currentTitle::placeholder{color:grey}#currentTitle{border-color:darkcyan; border-style:dotted; border-left:none; border-right:none;outline:none}</style>')
+            $('#currentTitle').attr('placeholder', ' Edit Title')
+        })
+   })   
+
+
+   function validateRegisterForm() {
+
+        var firstname = $('#firstname').val();
+        var lastname = $('#lastname').val();
+        var email = $('#email').val();
+        var username = $('#username-register').val();
+        var password = $('#password-register').val();
+        
+        if(firstname ==='' || lastname ==='' || email ==='' || username ==='' || password ==='') {
+                
+            if(firstname ==='')
+            {
+                $('#firstname').attr('placeholder', '! First Name is required')
+                $('body').append('<style>#firstname::placeholder{color:red}</style>')
+                $('#firstname').css('border-color', 'red')
+            }
+            if(lastname ==='')
+            {
+                $('#lastname').attr('placeholder', '! Last Name is required')
+                $('body').append('<style>#lastname::placeholder{color:red}</style>')
+                $('#lastname').css('border-color', 'red')
+            }
+
+            if(email ==='')
+            {
+                $('#email').attr('placeholder', '! Email is required')
+                $('body').append('<style>#email::placeholder{color:red}</style>')
+                $('#email').css('border-color', 'red')
+            }
+
+            if(username ==='')
+            {
+                $('#username-register').attr('placeholder', '! Username is required')
+                $('body').append('<style>#username-register::placeholder{color:red}</style>')
+                $('#username-register').css('border-color', 'red')
+            }
+            if(password ==='')
+            {
+                $('#password-register').attr('placeholder', '! Password is required')
+                $('body').append('<style>#password-register::placeholder{color:red}</style>')
+                $('#password-register').css('border-color', 'red')
+            }
+
+            return false;
+
+        }
+        else return true;
+
+   }
+
+   function validateLoginForm() {
+
+        var username = $('#username').val();
+        var password = $('#password').val();
+
+        if(username == '' || password == '')
+        {
+            if(username ==='' ) {  
+
+                $('#username').attr('placeholder', '! Username is required')
+                $('body').append('<style>#username::placeholder{color:red}</style>')
+                $('#username').css('border-color', 'red')
+            }
+            if(password ===''){
+
+                $('#password').attr('placeholder', '! Password is required')
+                $('body').append('<style>#password::placeholder{color:red}</style>')
+                $('#password').css('border-color', 'red')
+            }   
+
+            return false;
+        }
+        else return true;
+   }
+
+   validateHomeList = () => {
+       
+       var newItem = $('#addItem').val()
+
+       if(newItem === '') 
+       {
+                $('#addItem').attr('placeholder', '! Cannot add empty values to list')
+                $('body').append('<style>#addItem::placeholder{color:red}</style>')
+                $('#addItem').css('border-color', 'red')
+
+            return false;
+       }
+       else return true;
+   }
+
+   editTitle = () => {
+
+        var content = $('#editTitle').html()
+        var editableTitle = ''
+        for (let index = content.length - 1; index >= 0; index--) {
+
+            if(content.charAt(index) === '>')
+                break;
+            editableTitle += content.charAt(index)
+        }
+        
+        reverse = (str) => str.split("").reverse().join("");
+
+        var listTitle = reverse(editableTitle.trim())
+        console.log(listTitle);
+        if(listTitle !== 'Home')
+        {
+            var editablePageContent = '<form id="editTitleForm" action="/editTitle" method=POST onsubmit="return validateEditTitle(this)">' + 
+                                            '<div class="input-group">' + 
+                                                '<div class="input-group-prepend">' + 
+                                                    `<a role="button" class="btn btn-outline-info shadow-none" href="/home/${listTitle}" data-toggle="tooltip" data-placement="left" title="Cancel"><i class="far fa-times-circle"></i></a>` + 
+                                                '</div>' +
+                                                `<input type="text" placeholder=" Edit Title" name="currentTitle" id="currentTitle" value="${listTitle}" maxlength="18">` + 
+                                                '<div class="input-group-append">' + 
+                                                    '<button type="submit" id="editTitle" class="btn btn-outline-info shadow-none" formaction="/editTitle" method="post" onsubmit="validateEditTitle()" data-toggle="tooltip" data-placement="right" title="Change"><i class="far fa-edit"></i></button>' + 
+                                                '</div>' + 
+                                                '<div class="input-group-append">' + 
+                                                    `<button type="submit" id="removeList" class="btn btn-outline-info shadow-none" formaction="/deleteList" method="post" data-toggle="tooltip" data-placement="left" title="Remove List" name="item" value="${listTitle}"><i class="fas fa-trash-alt fa"></i></button>` + 
+                                                '</div>' +
+                                                '<div class="input-group-append">' + 
+                                                    `<button type="submit" id="clearList" class="btn btn-outline-info shadow-none" formaction="/clearList" method="post" data-toggle="tooltip" data-placement="left" title="Clear List" name="item" value="${listTitle}"><i class="fas fa-ban"></i></button>` + 
+                                                '</div>' +
+                                            '</div>' + 
+                                            `<input type="hidden" name="previousTitle" id="previousTitle" value="${listTitle}">` +  
+                                        '</form>'
+                                        
+            $('.titlebox').html(editablePageContent)
+        }
+   } 
+
+   validateEditTitle = () => {
+
+        var currentTitle = $('#currentTitle').val()
+        var activeElement = $(document.activeElement).attr('id')
+
+        if(activeElement === 'editTitle')
+        {
+            if(currentTitle === '')
+            {
+                $('#currentTitle').attr('placeholder', ' ! Required')
+                $('body').append('<style>#currentTitle::placeholder{color:red}</style>')
+            
+                return false;
+            }
+            else return true;
+        }
+        else return true;
+   }
+
+   $(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+</script>
+</html>

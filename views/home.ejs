@@ -1,0 +1,68 @@
+<%- include("partials/header") -%>
+
+<style>
+    body{background-color: mintcream; color: darkslategrey;}
+    .box-defaultList{background-color: aliceblue;}
+</style>
+
+<h4 class="common-displayName">Hi<%= " " + firstname + " " + lastname %></h4>
+<p class="common-description">Plan your schedules in a customized way. List out all your to-do activities by categorizing under the right place. Hope you dont miss out on any particular activity.</p>
+<h6 class="common-wish">All The Best<%= " " %><i class="far fa-thumbs-up"></i></h6>
+
+<div class="box box-customList">
+    <span>
+        <form action="/customList" method="post">
+            <div class="input-group">
+                <input type="text" name="customListName" id="customListName" class="form-control form-control-lg" placeholder="Create new list / View existing list" maxlength="13">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-outline-info shadow-none" type="button"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </form>
+        <h6><a class="lists-link" href="/lists">Show all lists</a></h6>
+    </span>
+</div>
+
+<div class="box" id="box-defaultList">
+    <div class="box-title titlebox">
+        <div class="defaultList-title">
+            <% if(listTitle === 'Home') { %>
+                <h2><i class="fas fa-list-alt"></i><%= " "+ listTitle %></h2>
+            <% } else { %>
+                <h2 id="editTitle" ondblclick="editTitle()"><i class="fas fa-list-alt" data-toggle="tooltip" data-placement="top" title="Double click to edit the title"></i><%= " "+ listTitle %></h2>
+            <% } %>
+        </div>
+    </div>
+    <div class="box-body">
+        <div class="card defaultList-body">
+            <div class="display-card">
+                <%  for(let listItem in listItems) { %>
+
+                    <form action="/deleteItems" method="post">
+                        <input type="hidden" name="listTitle" value="<%= listTitle %>">
+                        <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="customCheck<%= listItem %>" name="checkedItem<%= listItem %>" onchange="this.form.submit()" value="<%= listItems[listItem] %>">
+                            <label class="custom-control-label" for="customCheck<%= listItem %>"><h5><%=  listItems[listItem] %></h5></label>
+                          </div>
+                    </form>
+    
+              <%  } %>
+    
+                <form action="/home" method="post" onsubmit="return validateHomeList(this)">
+                    <input type="hidden" name="listTitle" value="<%= listTitle %>">
+                    <div class="form-group">
+                        <input type="text" name="addItem" id="addItem" class="form-control form-control-lg" placeholder="Add Something" maxlength="18">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" id="login-form-button" class="form-control form-control-lg btn btn-outline-info btn-lg" onsubmit="validateHomeList()">Add Activity</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a class="logout" href="/logout"><i class="fas fa-power-off fa-2x" data-toggle="tooltip" data-placement="bottom" title="Sign Out"></i></a>
+
+<%- include("partials/footer") -%>
+      

@@ -1,0 +1,74 @@
+<%- include("partials/header") -%>
+
+<h4 class="common-displayName">Hi<%= " " + firstname + " " + lastname %></h4>
+<p class="common-description">Plan your schedules in a customized way. List out all your to-do activities by categorizing under the right place. Hope you dont miss out on any particular activity.</p>
+<h6 class="common-wish">All The Best<%= " " %><i class="far fa-thumbs-up"></i></h6>
+
+<a class="logout" href="/logout"><i id="logoutIcon" class="fas fa-power-off fa-2x" data-toggle="tooltip" data-placement="bottom" title="Sign Out"></i></a>
+
+<style>
+    .logout {margin-bottom: -6%;}
+      body{background-color: whitesmoke; color: black;}
+      .logout{color: gray; opacity: 0.2;}
+      .logout:hover{color: black;}
+</style>
+
+<div class="box" id="box-defaultList">
+    <div class="box-title">
+        <div class="defaultList-title">
+            <h2><i class="fas fa-list-alt"></i><%= " "+ listTitle %></h2>
+        </div>
+    </div>
+    <div class="box-body">
+        <div class="card defaultList-body">
+            <div class="display-card">
+                <%  for(let item of listItems) { %>
+
+                    <form action="/deleteList" method="post">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <a href="/home/<%= item %>" class="btn btn-light shadow-none redirect-link" role="button" data-toggle="tooltip" data-placement="left" title="Redirect"><i class="fas fa-redo-alt"></i></a>
+                                      </div>
+                                    <input type="text" class="form-control form-control-lg" aria-label="Recipient's username" aria-describedby="basic-addon2" value="<%= item %>" readonly>
+                                    <div class="input-group-append">
+                                      <button class="btn btn-light shadow-none" type="submit" data-toggle="tooltip" data-placement="right" title="Remove" name="item" value="<%= item %>"><i class="fas fa-times"></i></button>
+                                    </div>
+                                  </div>
+                        <input type="hidden" name="listTitle" value="<%= listTitle %>">
+                    </form>
+    
+              <%  } %>
+    
+                <form action="/deleteAllLists" method="post">
+                    <div class="form-group">
+                        <button type="button" id="login-form-button" class="form-control form-control-lg btn btn-light btn-lg" data-toggle="modal" data-target="#exampleModalCenter">Delete All Lists</button>
+
+                        <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h5 class="modal-title" id="exampleModalCenterTitle">Delete All Lists</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                  </button>
+                                </div>
+                                <div class="modal-body">
+                                  Clicking confirm would delete all the lists. Do you want to continue?
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="submit" class="btn btn-light" value="Confirm">Confirm</button>
+                                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancel</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<%- include("partials/footer") -%>
