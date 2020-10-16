@@ -7,24 +7,24 @@ Functionality: A to-do list application where user can make a list either in the
 
 <div class="container">
     <div class="row">
-        <div class="col col-lg-4">
+        <div class="col col-lg-4 col-md-4 col-sm-4">
             <img src="images/register.jpeg">
         </div>
-        <div class="col col-lg-4">
+        <div class="col col-lg-4 col-lg-4 col-md-4 col-sm-4">
             <img src="images/login.jpeg">
         </div>
-        <div class="col col-lg-4">
+        <div class="col col-lg-4 col-lg-4 col-md-4 col-sm-4">
             <img src="images/homepage.jpeg">
         </div>
     </div>
     <div class="row">
-        <div class="col col-lg-4">
+        <div class="col col-lg-4 col-lg-4 col-md-4 col-sm-4">
             <img src="images/customlist-with-validation.jpeg">
         </div>
-        <div class="col col-lg-4">
+        <div class="col col-lg-4 col-lg-4 col-md-4 col-sm-4">
             <img src="images/InPlace edit.jpeg">
         </div>
-        <div class="col col-lg-4">
+        <div class="col col-lg-4 col-lg-4 col-md-4 col-sm-4">
             <img src="images/all-lists.jpeg">
         </div>
     </div>
