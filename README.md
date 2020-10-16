@@ -8,7 +8,7 @@ Functionality: A to-do list application where user can make a list either in the
 <div class="container">
     <div class="row">
         <div class="col col-lg-4 col-md-4 col-sm-4">
-            <img src="images/register.jpeg">
+            <img src="images/register.jpeg" width="50%" height="50%">
         </div>
         <div class="col col-lg-4 col-lg-4 col-md-4 col-sm-4">
             <img src="images/login.jpeg">
