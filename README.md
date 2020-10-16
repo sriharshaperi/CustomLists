@@ -7,7 +7,7 @@ Functionality: A to-do list application where user can make a list either in the
 
 <img src="images/register.jpeg" width="25%" height="25%" name="register"><label for="register" style="text-align:center;">Register</label>
 <img src="images/login.jpeg" width="25%" height="25%" id="login">
-<img src="images/homepage.jpeg" width="25%" height="25%" id="homepage">
+<img src="images/homepage.jpeg" width="25%" height="25%" id="homepage"><br><br>
 <img src="images/customlist-with-validation.jpeg" width="25%" id="customlist-with-validation">
 <img src="images/InPlace-edit.jpeg" width="25%" height="25%" id="InPlace-edit">
 <img src="images/all-lists.jpeg" width="25%" height="25%" id="all-lists">
